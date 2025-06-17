@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from .forms import SignUpForm, CustomLoginForm
-from authentication.models import User
 
 User = get_user_model()
 
@@ -70,31 +69,7 @@ def resend_verification_view(request):
     return redirect('home')
 
 
-def privacy_policy(request):
-    return render(request, 'events/legal/privacy_policy.html')
 
-
-def terms_conditions(request):
-    return render(request, 'events/legal/terms_conditions.html')
-
-def events_list(request):
-    """List all events - placeholder for Milestone 3"""
-    return render(request, 'events/events_list.html', {
-        'title': 'All Events',
-        'message': 'Events listing coming in Milestone 3'
-    })
-
-
-def create_event(request):
-    """Create event - placeholder for Milestone 5"""
-    if not request.user.is_authenticated:
-        messages.info(request, 'Please login to create an event.')
-        return redirect('login')
-    
-    return render(request, 'events/create_event.html', {
-        'title': 'Create Event',
-        'message': 'Event creation coming in Milestone 5'
-    })
 
 
 def events_list(request):
