@@ -1,3 +1,4 @@
+{% load static %}
 <!-- base.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,11 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/react-styles.css' %}">
+
     
     <!-- Custom styles -->
     <style>
@@ -82,6 +88,7 @@
 
     <!-- Main Content -->
     {% block content %}{% endblock %}
+    <div id="react-root"></div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8 mt-16">
@@ -94,6 +101,7 @@
     <div id="mini-cart-preview" class="hidden fixed bottom-4 right-4 z-50 max-w-sm"></div>
 
     <!-- Load cart JavaScript if needed -->
+    <script src="{% static 'js/react-app.js' %}"></script>
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>
