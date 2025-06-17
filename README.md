@@ -10,14 +10,18 @@ Installation
 git clone https://github.com/yourusername/jersey-homepage.git
 cd jersey-homepage
 1. Copy the environment file:
-cp .env.example .env
-1. Build and start the Docker containers:
-docker-compose up --build
-1. Run migrations:
-docker-compose exec web python manage.py migrate
-1. Create a superuser:
-docker-compose exec web python manage.py createsuperuser
-1. Visit http://localhost:8000 to see the homepage!
+   cp .env.example .env
+2. Install Python dependencies locally (optional if using Docker):
+   ```
+   ./install_deps.sh
+   ```
+3. Build and start the Docker containers:
+   docker-compose up --build
+4. Run migrations:
+   docker-compose exec web python manage.py migrate
+5. Create a superuser:
+   docker-compose exec web python manage.py createsuperuser
+6. Visit http://localhost:8000 to see the homepage!
 🏗️ Project Structure
 jersey-homepage/
 ├── jersey_homepage/          # Django project settings
